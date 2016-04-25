@@ -22,5 +22,5 @@ exports.setRole = function(req, res) {
 }
 
 exports.checkRole = function(req, res, next){
-	return [1, 99].indexOf(req.session.role) != -1 ? next() : ''
+	return [1, 99].indexOf(req.session.role) != -1 ? next() : res.status(403).send('Forbidden')
 }
